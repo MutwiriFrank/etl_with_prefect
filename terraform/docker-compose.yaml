@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=ny_tazi
+    ports:
+      - 54320:5432
+    # networks:
+    #   - pg-network
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=FRANKLINMUTWIRI41@GMAIL.COM
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - 8080:80
+    # networks:
+    #   - pg-network
+
+# networks:
+  
